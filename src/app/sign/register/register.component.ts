@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/classes/user';
-import { AuthentificationService } from 'src/app/core/services/authentification/authentification.service';
 
 
 @Component({
@@ -12,13 +10,10 @@ import { AuthentificationService } from 'src/app/core/services/authentification/
 })
 export class RegisterComponent implements OnInit {
   signUpForm!: FormGroup
-  user: User;
 
 
   constructor(private router: Router, 
-    private formBuilder: FormBuilder,
-    private authentificationSerice: AuthentificationService) {
-    this.user = new User();
+    private formBuilder: FormBuilder,) {
    }
 
   ngOnInit(): void {
@@ -34,27 +29,5 @@ export class RegisterComponent implements OnInit {
       password: new FormControl(null, Validators.required),
       confPassword: new FormControl(null, Validators.required),
     })
-  }
-
-  onSignUp(){
-    const formValue = this.signUpForm.value;
-    this.user.firstName = formValue.firstName;
-    this.user.lastName = formValue.lastName;
-    this.user.email = formValue.userName;
-    this.user.phoneNumber = formValue.phoneNumber;
-    this.user.password = formValue.password;
-    this.user.userName = formValue.userName;
-    if(formValue.password != formValue.confPassword){
-      alert("les mots de passe sont differents !")
-    }else{
-      this.authentificationSerice.signup(this.user).subscribe((user)=>{
-        this.user = user;
-        this.router.navigateByUrl('login');
-      })
-    }
-  }
-
-  sinUp(user: User){
-
   }
 }

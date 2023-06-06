@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EntityGuard } from 'src/app/core/services/entity.guard';
 import { ProductsComponent } from './products/products.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 const routes: Routes = [
-  {path:"", component: ProductsComponent, canActivate: [EntityGuard],
+  {path:"", component: ProductsComponent,
   children: [
-    {path:"products", component: ProductsComponent, canActivate: [EntityGuard]},
+    {path:"products", component: ProductsComponent},
+    {path:"create-product", component: CreateProductComponent},
   ]
   }
 ];

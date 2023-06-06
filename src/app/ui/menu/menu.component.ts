@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/classes/user';
-import { UserService } from 'src/app/core/services/users/user.service';
 import { UtilityService } from 'src/app/core/services/utility/utility.service';
 
 @Component({
@@ -22,11 +20,8 @@ export class MenuComponent implements OnInit {
   activeReport: string = "";
   activeReportList: string = "";
   activeProfile: string = "";
-  user: User;
   constructor( private utilityService: UtilityService,
-    private router: Router,
-    private userService: UserService) {
-      this.user = new User();
+    private router: Router,) {
      }
 
   ngOnInit(): void {
@@ -35,7 +30,7 @@ export class MenuComponent implements OnInit {
   }
 
   logout() {
-    this.utilityService.deleteToken();
+    // this.utilityService.deleteToken();
     this.router.navigateByUrl("login");
   }
 

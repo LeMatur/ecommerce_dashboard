@@ -18,7 +18,6 @@ import { TooltipModule } from 'ng2-tooltip-directive';
     UiModule,
     Select2Module,
     TooltipModule
-    
   ]
 })
 export class AppModulesModule { }

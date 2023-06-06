@@ -1,31 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EntityGuard } from '../core/services/entity.guard';
+// import { EntityGuard } from '../core/services/entity.guard';
 import { AppContentComponent } from './app-content/app-content.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { CreateVendorComponent } from './vendor/create-vendor/create-vendor.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { VendorProfileComponent } from './vendor/vendor-profile/vendor-profile.component';
 import { SubCategoriesComponent } from './category/sub-categories/sub-categories.component';
+import { CreateProductComponent } from './product/create-product/create-product.component';
 
 const routes: Routes = [
   {
     path:"", component: AppContentComponent,
     children: [
       {
-        path:"create-user", component: CreateUserComponent, canActivate: [EntityGuard]
+        path:"create-user", component: CreateUserComponent
       },
       {
-        path:"create-vendor", component: CreateVendorComponent, canActivate: [EntityGuard]
+        path:"create-vendor", component: CreateVendorComponent
       },
       {
-        path:"user-profile", component: UserProfileComponent, canActivate: [EntityGuard]
+        path:"user-profile", component: UserProfileComponent
       },
       {
-        path:"vendor-profile", component: VendorProfileComponent, canActivate: [EntityGuard]
+        path:"vendor-profile", component: VendorProfileComponent
       },
       {
-        path:"sub-categories", component: SubCategoriesComponent, canActivate: [EntityGuard]
+        path:"sub-categories", component: SubCategoriesComponent
+      },
+      {
+        path:"create-product", component: CreateProductComponent
       },
       {
         path : 'dashboards',

@@ -40,7 +40,7 @@
                         <!--Form-->
                         <div class="form-card">
 
-                            <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+                            <!-- <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()"> -->
                                 <div id="signin-form" class="login-form">
                                     <div class="field">
                                         <div class="control has-icon">
@@ -134,11 +134,11 @@
 
                                     <!-- Submit -->
                                     <div class="control login">
-                                        <button [disabled]="signUpForm.invalid" class="button h-button is-primary is-bold is-fullwidth is-raised">Sign Up</button>
+                                        <button [routerLink]="['/login/']" class="button h-button is-primary is-bold is-fullwidth is-raised">Sign Up</button>
                                     </div>
 
                                 </div>
-                            </form>
+                            <!-- </form> -->
                         </div>
 
                     </div>
