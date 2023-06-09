@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UtilityService } from 'src/app/core/services/utility/utility.service';
 
 @Component({
   selector: 'app-navbar-mobile',
@@ -16,8 +15,7 @@ export class NavbarMobileComponent implements OnInit {
   activeProfil: string = "";
   isActive: string = "";
 
-  constructor( private utilityService: UtilityService,
-    private router: Router,) {
+  constructor( private router: Router,) {
      }
 
   ngOnInit(): void {

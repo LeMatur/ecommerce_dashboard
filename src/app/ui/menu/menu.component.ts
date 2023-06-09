@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UtilityService } from 'src/app/core/services/utility/utility.service';
 
 @Component({
   selector: 'app-menu',
@@ -20,30 +19,12 @@ export class MenuComponent implements OnInit {
   activeReport: string = "";
   activeReportList: string = "";
   activeProfile: string = "";
-  constructor( private utilityService: UtilityService,
-    private router: Router,) {
+
+  constructor( private router: Router,) {
      }
 
   ngOnInit(): void {
-    this.getConnectedUser();
-    
   }
-
-  logout() {
-    // this.utilityService.deleteToken();
-    this.router.navigateByUrl("login");
-  }
-
-  getConnectedUser() {
-    
-  }
-
-  // getRole(){
-  //   this.utilityService.getUserRole(this.utilityService.loadToken()).forEach((role :any)=>{
-  //     console.log("Role::", role);
-      
-  // })
-  // }
 
   onActiveOrder() {
     if (this.activeOrder ==  "") {

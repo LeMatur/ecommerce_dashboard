@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UtilityService } from 'src/app/core/services/utility/utility.service';
 
 @Component({
   selector: 'app-app-content',
@@ -54,12 +53,10 @@ export class AppContentComponent implements OnInit {
   isProfitabilityType: boolean = false;
   isRefundType: boolean = false;
 
-  constructor( private utilityService: UtilityService,
-    private router: Router,) {
+  constructor( private router: Router,) {
      }
 
   ngOnInit(): void {
-    this.getConnectedUser();
   }
 
   onCloseAllMobileMenu() {
@@ -91,16 +88,6 @@ export class AppContentComponent implements OnInit {
     }
   }
 
-  logout() {
-    // this.utilityService.deleteToken();
-    this.router.navigateByUrl("login");
-  }
-
-  getConnectedUser() {
-    // this.userService.getUserByEmail(this.utilityService.getUserName()).subscribe((res) => {
-    //   this.user = res.data;
-    // })
-  }
   onDisplayMainOffice(){
     if(this.activateMainOfficeDetails == ""){
       this.activateMainOfficeDetails = "active" 
